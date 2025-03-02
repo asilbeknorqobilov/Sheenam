@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Sheenam.Api.Brokers.Storages;
 
-public partial class StorageBrokers : EFxceptionsContext
+public partial class StorageBroker : EFxceptionsContext,IStorageBroker
 {
     private readonly IConfiguration configuration;
 
-    public StorageBrokers(IConfiguration configuration)
+    public StorageBroker(IConfiguration configuration)
     {
         this.configuration = configuration;
         this.Database.Migrate();
